@@ -9,8 +9,8 @@
 * 8) Actor tablosunda actor_id 'nin boş olduğu satırların diğer detaylarını gösteriniz. 
 * 9) Actor tablosunda actor_id 'nin boş olmadığı satırların diğer detaylarını gösteriniz. 
 * 10) Film tablosunda boş olmayan satırların sayısını bulunuz. 
-Payment tablosundan amount’un toplamını çıktı başlığı sum_amt olarak gösteriniz. 
-Payment tablosundan maximum ve minimum amount ‘u gösteriniz. 
+* 11) Payment tablosundan amount’un toplamını çıktı başlığı sum_amt olarak gösteriniz. 
+* 12) Payment tablosundan maximum ve minimum amount ‘u gösteriniz. 
 
 
 ### GoodLuck :)
