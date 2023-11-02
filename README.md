@@ -1,4 +1,5 @@
 # VIT2 Database-Module-Week9
+### Not:Konu anlatiminda bahsedilen, derse tedarik ederek geleceginiz data uzerinden asagidaki sorgulamalari yapmaniz gerekmektedir ;
 * 1) İlk isminde Nick, Ed ve Jennifer adları bulunan aktörlerin adını ve soyadını gösterin. 
 * 2) İlk isminde adları Ed, Nick ve Jennifer olan aktörün sadece soyadını gösterin. 
 * 3) Adres tablosunun bütün ayrıntılarını gösterin. 
