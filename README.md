@@ -1,6 +1,6 @@
 # VIT2 Database-Module-Week9
-1- İlk isminde Nick, Ed ve Jennifer adları bulunan aktörlerin adını ve soyadını gösterin. 
-2- İlk isminde adları Ed, Nick ve Jennifer olan aktörün sadece soyadını gösterin. 
+* 1 İlk isminde Nick, Ed ve Jennifer adları bulunan aktörlerin adını ve soyadını gösterin. 
+* 2 İlk isminde adları Ed, Nick ve Jennifer olan aktörün sadece soyadını gösterin. 
 Adres tablosunun bütün ayrıntılarını gösterin. 
 Adres tablosunda ilçe ve telefonu (district & phone) azalan sırada gösterin 
 Film ve envanter tablosundaki film_id’yi kullanarak, Film tablosundan film_id’yi, title’ i ve Envanter tablosundan envanter_id'sini gösterin. 
