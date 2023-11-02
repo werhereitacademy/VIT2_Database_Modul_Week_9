@@ -13,5 +13,8 @@
 * 11) Payment tablosundan amount’un toplamını çıktı başlığı sum_amt olarak gösteriniz. 
 * 12) Payment tablosundan maximum ve minimum amount ‘u gösteriniz. 
 
+## Hackerrank Questions
+
+- 1. Weather Observation Station 1: https://www.hackerrank.com/challenges/weather-observation-station-1/problem
 
 ### GoodLuck :)
