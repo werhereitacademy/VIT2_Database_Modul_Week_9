@@ -19,7 +19,11 @@ inner join film_category f2 on f1.film_id = f2.film_id (Film_id'yi kullanarak e�
 
 
 # VII. Rental ve Payment tablolarından oluşan amount a göre azalan olarak sıralanmış rental_id, rental_date,  payment_id ‘den oluşan ilk 10 satırı gösterin.
-
+payment_id ‘den oluşan ilk 10 satırı gösterin.
+select r.rental_id,r.rental_date,pymt.payment_id, from rental r
+join payment pymt on r.rental_id = pymt.rental_id
+order by pymt.amount desc
+limit 10
 
 
 # VIII. Actor tablosunda actor_id 'nin boş olduğu satırların diğer detaylarını gösteriniz.
