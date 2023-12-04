@@ -16,7 +16,20 @@ select f1.film_id,f1.title, f2.category_id from film f1
 inner join film_category f2 on f1.film_id = f2.film_id (Film_id'yi kullanarak eşitledik)
 
 # VI. Envanter tablosu (inventory) ve rental tablosundan oluşan ilk 5 satırı gösterin.
+select * from rental r    # Bu Doğru Cevap Olan Sanırsam.
+join inventory i on r.inventory_id = i.inventory_id
+where r.rental_id <=5
+order by r.rental_id
+limit 5
 
+#Benim Sorudan Anladığım Cevap: 
+select *                  
+from rental r
+join inventory i on r.rental_id = i.inventory_id   
+where (r.rental_id Between 2 and 6) or (i.inventory_id Between 1 and 5)
+order by r.rental_id
+limit 6;  #Limit 6 çünkü birisinde satır 2'den başlayıp 6'ya, diğerinde ise 1'den başlayıp 5'e kadar gidiyor. 
+#Çıkan sonuçta, Rental_id'de 1 id'si fazlayken, inventory_id'de 6. id fazlalık, soruda istenmeyen yani.
 
 # VII. Rental ve Payment tablolarından oluşan amount a göre azalan olarak sıralanmış rental_id, rental_date,  payment_id ‘den oluşan ilk 10 satırı gösterin.
 payment_id ‘den oluşan ilk 10 satırı gösterin.
