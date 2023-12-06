@@ -1,0 +1,5 @@
+#Select All - Week_8
+select * from city
+
+#Weather Observation Station 1
+select City, State from station

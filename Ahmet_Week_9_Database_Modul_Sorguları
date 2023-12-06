@@ -1,0 +1,60 @@
+# I. İlk isminde Nick, Ed ve Jennifer adları bulunan aktörlerin adını ve soyadını gösterin.
+select first_name,last_name from actor Where first_name = 'Nick' or first_name ='Ed' or first_name = 'Jennifer'
+
+# II. İlk isminde adları Ed, Nick ve Jennifer olan aktörün sadece soyadını gösterin.
+select last_name from actor Where first_name = 'Nick' or first_name ='Ed' or first_name = 'Jennifer';
+
+# III. Adres tablosunun bütün ayrıntılarını gösterin.
+select * from addres;
+
+# IV. Adres tablosunda ilçe ve telefonu (district & phone) azalan sırada gösterin
+select district,phone from address order by district desc;
+# select district,phone from address order by phone desc;
+
+# V. Film ve envanter tablosundaki film_id’yi kullanarak, Film tablosundan film_id’yi, title’ i ve Envanter tablosundan envanter_id'sini gösterin.
+select f1.film_id,f1.title, f2.category_id from film f1
+inner join film_category f2 on f1.film_id = f2.film_id (Film_id'yi kullanarak eşitledik)
+
+# VI. Envanter tablosu (inventory) ve rental tablosundan oluşan ilk 5 satırı gösterin.
+select * from rental r    # Bu Doğru Cevap Olan Sanırsam.
+join inventory i on r.inventory_id = i.inventory_id
+where r.rental_id <=5
+order by r.rental_id
+limit 5
+
+#Benim Sorudan Anladığım Cevap: 
+select *                  
+from rental r
+join inventory i on r.rental_id = i.inventory_id   
+where (r.rental_id Between 2 and 6) or (i.inventory_id Between 1 and 5)
+order by r.rental_id
+limit 6;  #Limit 6 çünkü birisinde satır 2'den başlayıp 6'ya, diğerinde ise 1'den başlayıp 5'e kadar gidiyor. 
+#Çıkan sonuçta, Rental_id'de 1 id'si fazlayken, inventory_id'de 6. id fazlalık, soruda istenmeyen yani.
+
+# VII. Rental ve Payment tablolarından oluşan amount a göre azalan olarak sıralanmış rental_id, rental_date,  payment_id ‘den oluşan ilk 10 satırı gösterin.
+payment_id ‘den oluşan ilk 10 satırı gösterin.
+select r.rental_id,r.rental_date,pymt.payment_id, from rental r
+join payment pymt on r.rental_id = pymt.rental_id
+order by pymt.amount desc
+limit 10
+
+
+# VIII. Actor tablosunda actor_id 'nin boş olduğu satırların diğer detaylarını gösteriniz.
+select * from actor where actor_id is NULL
+
+# IX. Actor tablosunda actor_id 'nin boş olmadığı satırların diğer detaylarını gösteriniz.
+select * from actor where actor_id is not NULL
+
+# X. Film tablosunda boş olmayan satırların sayısını bulunuz.
+select * from film where film_id is not NULL or title is not NULL or description is not NULL
+
+# XI. Payment tablosundan amount’un toplamını çıktı başlığı sum_amt olarak gösteriniz.
+select sum(amount) as Sum_Amt from payment
+# select sum(amount) as Sum_Amt from payment group by payment_id
+# select payment_id, customer_id, staff_id, rental_id, sum(amount) as Sum_Amt, payment_date from payment group by payment_id
+
+
+# XII. Payment tablosundan maximum ve minimum amount ‘u gösteriniz.
+select max(amount) as Max_Amt, min(amount) as Min_Amt from payment
+# select max(amount) as Max_Amt from payment
+# select min(amount) as Min_Amt from payment
