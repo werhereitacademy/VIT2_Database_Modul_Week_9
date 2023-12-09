@@ -65,3 +65,8 @@ FROM Payment;
 ##################################################################################
 Hackerrank_Weather Observation Station 1
 Query a list of CITY and STATE from the STATION table.
+/*OUTput City and State
+Enter your query here.
+*/
+SELECT CITY, STATE
+FROM STATION;
