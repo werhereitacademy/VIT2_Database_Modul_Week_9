@@ -1,0 +1,71 @@
+i)İlk isminde Nick, Ed ve Jennifer adları bulunan aktörlerin adını ve soyadını gösterin.
+
+SELECT first_name, last_name
+FROM actor
+WHERE first_name IN ('Nick', 'Ed', 'Jennifer');
+
+ii)İlk isminde adları Ed, Nick ve Jennifer olan aktörün sadece soyadını gösterin.
+
+SELECT last_name
+FROM actor
+WHERE first_name IN ('Nick', 'Ed', 'Jennifer');
+
+iii)Adres tablosunun bütün ayrıntılarını gösterin.
+
+SELECT * 
+FROM address;
+
+iv)Adres tablosunda ilçe ve telefonu (district & phone) azalan sırada gösterin
+
+SELECT district, phone 
+FROM address 
+ORDER BY district DESC, phone DESC
+
+v)Film ve envanter tablosundaki film_id’yi kullanarak, Film tablosundan film_id’yi, title’ i ve Envanter tablosundan envanter_id'sini gösterin.
+
+SELECT film.film_id, film.title, inventory.inventory_id 
+FROM film 
+INNER JOIN inventory ON film.film_id=inventory.film_id
+
+vi)Envanter tablosu ve rental tablosundan oluşan ilk 5 satırı gösterin.
+
+SELECT * 
+FROM inventory, rental 
+WHERE inventory.inventory_id=rental.inventory_id
+LIMIT 5
+
+vii)Rental ve Payment tablolarından oluşan amount a göre azalan olarak sıralanmış rental_id, rental_date, payment_id ‘den oluşan ilk 10 satırı gösterin.
+
+SELECT rental.rental_id, rental.rental_date, payment.payment_id 
+FROM rental
+INNER JOIN payment ON payment.rental_id=rental.rental_id
+ORDER BY payment.amount DESC
+LIMIT 10
+
+viii)Actor tablosunda actor_id 'nin boş olduğu satırların diğer detaylarını gösteriniz.
+
+SELECT * 
+FROM actor
+WHERE actor_id IS NULL
+
+ix)Actor tablosunda actor_id 'nin boş olmadığı satırların diğer detaylarını gösteriniz.
+
+SELECT * 
+FROM actor
+WHERE actor_id IS NOT NULL
+
+x)Film tablosunda boş olmayan satırların sayısını bulunuz.
+
+SELECT COUNT(*) 
+FROM film 
+
+xi)Payment tablosundan amount’un toplamını çıktı başlığı sum_amt olarak gösteriniz.
+
+SELECT SUM(amount) sum_amt 
+FROM payment
+
+xii)Payment tablosundan maximum ve minimum amount ‘u gösteriniz.
+
+SELECT MAX(amount) AS Max_amt,
+MIN(amount) AS Min_amt
+FROM payment;
